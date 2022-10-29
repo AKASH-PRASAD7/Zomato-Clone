@@ -13,15 +13,14 @@ app.use(express.json());
 const port = 8080;
 
 app.listen(port, () => {
-  // dbconnect()
-  //   .then(() => {
-  //     console.log("Server is Running !");
-  //   })
-  //   .catch((error) => {
-  //     console.log("Server is Running But Database Connection error");
-  //     console.log(error);
-  //   });
-  console.log("Server is Running !");
+  dbconnect()
+    .then(() => {
+      console.log("Server is Running !");
+    })
+    .catch((error) => {
+      console.log("Server is Running But Database Connection error");
+      console.log(error);
+    });
 });
 
 app.use("/", (req, res) => {
